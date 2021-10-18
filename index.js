@@ -27,11 +27,12 @@ if(localStorage.getItem('items')){
     items=[];
 }
 const timer = ()=>{
-    s++;
-    if(s === 60){
-        m++;
-        s=0;
-    }
+    const currentDate = new Date();
+    const diffMSec = currentDate.getTime() - today.getTime();
+    const diffSec = Math.round(diffMSec / 1000);
+    console.log(diffSec);
+    m = parseInt(diffSec / 60);
+    s = diffSec - m*60;
     fillZero();
     minute.innerHTML=mString;
     second.innerHTML=sString;
@@ -45,20 +46,21 @@ const fillZero = ()=>{
 
 for(let i in items){
     const li = document.createElement("li");
-        li.classList.add("working-item");
-        const date = document.createElement("div");
-        date.classList.add("date");
-        date.innerHTML=items[i].date;
-        const startTime = document.createElement("div");
-        startTime.classList.add("start-time");
-        startTime.innerHTML = items[i].startTime;
-        const workingTime = document.createElement("div");
-        workingTime.classList.add("working-time");
-        workingTime.innerHTML = items[i].workingTime;
-        li.appendChild(date);
-        li.appendChild(startTime);
-        li.appendChild(workingTime);
-        ol.appendChild(li);
+    li.classList.add("working-item");
+    const date = document.createElement("div");
+    date.classList.add("date");
+    date.innerHTML=items[i].date;
+    const startTime = document.createElement("div");
+    startTime.classList.add("start-time");
+    startTime.innerHTML = items[i].startTime;
+    const workingTime = document.createElement("div");
+    workingTime.classList.add("working-time");
+    workingTime.innerHTML = items[i].workingTime;
+
+    li.appendChild(date);
+    li.appendChild(startTime);
+    li.appendChild(workingTime);
+    ol.appendChild(li);
 }
 walkingBtn.addEventListener('click',()=>{
     if(!isWalking){
