@@ -2,14 +2,14 @@ const walkingBtn = document.querySelector('.walking-button');
 const minute = document.querySelector('.minute');
 const second = document.querySelector('.second');
 const ol = document.querySelector('ol');
-let today = new Date();   
+let today;   
 
-let _year = today.getFullYear(); // 년도
-let _month = today.getMonth() + 1;  // 월
-let _date = today.getDate();  // 날짜
-let _day = today.getDay();  // 요일
-let _hour = today.getHours();
-let _minute = today.getMinutes();
+let _year; // 년도
+let _month;  // 월
+let _date;  // 날짜
+let _day;  // 요일
+let _hour;
+let _minute;
 
 let m=0;
 let s= 0;
@@ -63,6 +63,13 @@ for(let i in items){
 walkingBtn.addEventListener('click',()=>{
     if(!isWalking){
         isWalking=true;
+        today = new Date();   
+        _year = today.getFullYear(); // 년도
+        _month = today.getMonth() + 1;  // 월
+        _date = today.getDate();  // 날짜
+        _day = today.getDay();  // 요일
+        _hour = today.getHours();
+        _minute = today.getMinutes();
         walkingBtn.innerHTML="끝";
         interval = setInterval(timer,1000);
         

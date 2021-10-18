@@ -18,6 +18,8 @@ body{
 
 .working-list{
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .working-item{
