@@ -20,7 +20,12 @@ let isWalking=false;
 
 let interval;
 
-let items=JSON.parse(localStorage.getItem('items'));
+let items;
+if(localStorage.getItem('items')){
+    items=JSON.parse(localStorage.getItem('items'));
+}else{
+    items=[];
+}
 const timer = ()=>{
     s++;
     if(s === 60){
