@@ -1,33 +1,86 @@
-body{
-    padding: 10px;
-    text-align: center;
+.container {
+  height: 100%;
+  padding: 10px;
+  text-align: center;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.walking-button{
-    margin-bottom: 10px;
+.walking-button {
+  font-size: 24px;
 }
-.timer{
-    display: flex;
-    margin-bottom: 10px;
-    font-size: 20px;
-    font-weight: 700;
+.timer {
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.walking-list-container {
+  height: 60vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  margin-bottom: 20px;
+}
+.walking-list-container::-webkit-scrollbar {
+  display: none;
 }
 
-.working-list{
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column-reverse;
+.walking-list {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
-.working-item{
-    display: flex;
-    
-    margin-bottom: 4px;
+.walking-item {
+  position: relative;
+  display: flex;
+  margin-bottom: 4px;
 }
 
-.working-item div{
-    width: 110px;
+.walking-item div:first-child {
+  width: 100px;
+}
+.walking-item div:nth-child(2) {
+  width: 80px;
+}
+.walking-item div:nth-child(3) {
+  width: 110px;
+}
+.walking-item .delete-button {
+  position: absolute;
+  right: 0;
+  font-size: 10px;
+}
+
+.week-title {
+  margin-bottom: 10px;
+}
+
+.week-list {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.week-list div {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.week-list .color {
+  background-color: gray;
+  border-radius: 5px;
+}
+
+.week-item:not(:last-child) {
+  margin-right: 5px;
+}
+
+.week-list .none-walking {
+  background-color: red;
+}
+
+.week-list .done-walking {
+  background-color: green;
 }

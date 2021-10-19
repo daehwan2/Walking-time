@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="index.css" />
     <title>Walking with dog</title>
-</head>
-<body>
-    <button class="walking-button" type="button">산책</button>
-
-    <div class="timer">
+  </head>
+  <body>
+    <div class="temp"></div>
+    <div class="container">
+      <div class="timer">
         <div class="minute">00</div>
         <div>:</div>
         <div class="second">00</div>
-    </div>
-    <li class="working-item">
+      </div>
+      <li class="walking-item">
         <div class="date">날짜</div>
         <div class="start-time">시작시간</div>
-        <div class="working-time">산책시간</div>
-    </li>
-    <ol class="working-list">
-    </ol>
+        <div class="walking-time">산책시간</div>
+      </li>
+      <div class="walking-list-container">
+        <ol class="walking-list"></ol>
+      </div>
+      <strong class="week-title">이번주 산책 현황</strong>
+      <ul class="week-list">
+        <li class="week-item sun">
+          <div class="date"></div>
+          <div class="color"></div>
+        </li>
+        <li class="week-item mon">
+          <div class="date"></div>
+          <div class="color"></div>
+        </li>
+        <li class="week-item tue">
+          <div class="date"></div>
+          <div class="color"></div>
+        </li>
+        <li class="week-item wen">
+          <div class="date"></div>
+          <div class="color"></div>
+        </li>
+        <li class="week-item thu">
+          <div class="date"></div>
+          <div class="color"></div>
+        </li>
+        <li class="week-item fri">
+          <div class="date"></div>
+          <div class="color"></div>
+        </li>
+        <li class="week-item sat">
+          <div class="date"></div>
+          <div class="color"></div>
+        </li>
+      </ul>
+      <button class="walking-button" type="button">산책</button>
+    </div>
+
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
